@@ -1,36 +1,72 @@
-* {
+.main-page {
     background-image: url('https://source.unsplash.com/xaaMf_0IhVs');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    background-color: #cccccc;
 }
 
+.nav-main {
+    border-bottom: 2px solid black;
+    border-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3%;
+}
 
-/* div.transbox { */
-    /* margin: 25%;
-    background: rgba(255, 255, 255, .5); 
-    display: flex;  
-    justify-content: center; */
-  /* } */
+.nav-others {
+	border-bottom: 2px solid black;
+    border-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 0%;
+}
 
-p {
-    background: rgba(255, 255, 255, .5);
+ol {
+	padding-left: 0;
+}
+
+.crumb {
+	margin-right: 2em;
+	display: inline;
+}
+
+a {
+    font-family: "Geneva",sans-serif;
+	color: black;
+}
+
+a:visited {
+	color: rgb(61, 116, 53);
+}
+
+.title {
+    background: rgba(0, 0, 0, .6);
     font-size: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Geneva",sans-serif;
+    font-family: "American Typewriter",sans-serif;
     /* font-weight: bold; */
-    color: black;
-    margin: 25%;
-    padding: 3%;
+    color: white;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2%;
 }
 
-.home-pic {
-    height: 100vh;
-    width: 70%;
-    padding-left: 15%;
-    padding-right: 15%;
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "American Typewriter",sans-serif;
+    font-size: 80px;
+    color: black;
 }
+
