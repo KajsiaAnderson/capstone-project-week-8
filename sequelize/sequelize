@@ -1,0 +1,17 @@
+-- CREATE TABLE hikes(
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(100) NOT NULL,
+--   distance FLOAT NOT NULL,
+--   elevation INT NOT NULL,
+--   route VARCHAR(100) NOT NULL
+-- );
+
+
+-- INSERT INTO hikes (name, distance, elevation, route)
+-- VALUES ('Lone Peak', 15.6, 5554, 'Out & back'),
+-- ('Mount Timpanogos', 14.3, 4448, 'Out & back'),
+-- ('Cascade Mountain', 13.0, 5396, 'Out & back'),
+-- ('Provo Peak', 11.6, 6522, 'Out & back'),
+-- ('Mount Nebo', 8.6, 3569, 'Out & back'),
+-- ('Spanish Fork Peak', 10.6, 4685, 'Out & back'),
+-- ('Loafer Mountain', 11.2, 3536, 'Out & back');
