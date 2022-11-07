@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Hikes</title>
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="main.css" />
 </head>
+
 <body>
     <header>Take a hike.</header>
     <nav class="nav-others">
-		<ol>
-	        <li class="crumb"><a href="./main.html">Home</a></li>
-	        <li class="crumb"><a href="./my-hikes.html">My Hikes</a></li>
-	        <li class="crumb"><a href="./utah-hikes.html">Utah Hikes</a></li>
-	    </ol>
-	</nav>
-    <content>
+        <ol>
+            <li class="crumb"><a href="./main.html">Home</a></li>
+            <li class="crumb"><a href="./my-hikes.html">My Hikes</a></li>
+            <li class="crumb"><a href="./utah-hikes.html">Utah Hikes</a></li>
+        </ol>
+    </nav>
+    <main>
+        <aside>
+            <h2 class="add-entry">Add an Entry</h2>
+
+            <form>
+                <label for="name-input">Hike:</label>
+                <input type='text' id="name-input" placeholder="Enter name of hike" />
+
+                <input type='text' id="img" placeholder='Paste an image URL' />
+
+                <section id="ratings-container">
+                    <p>Rate the hike:</p>
+                    <div id="radio-container">
+                        <label for="rating-one">1</label>
+                        <input type="radio" name="rating" value="1" id="rating-one" checked="true" />
+
+                        <label for="rating-two">2</label>
+                        <input type="radio" name="rating" value="2" id="rating-two" />
+
+                        <label for="rating-three">3</label>
+                        <input type="radio" name="rating" value="3" id="rating-three" />
+
+                        <label for="rating-four">4</label>
+                        <input type="radio" name="rating" value="4" id="rating-four" />
+
+                        <label for="rating-five">5</label>
+                        <input type="radio" name="rating" value="5" id="rating-five" />
+                    </div>
+                </section>
+                <button>add</button>
+            </form>
+        </aside>
+
+
+        <section id="hike-container"></section>
 
 
 
-        
-    </content>
+    </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
