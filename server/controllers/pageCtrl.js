@@ -13,80 +13,86 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
-    home: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../main.html"))
+    // home: (req, res) => {
+    //     res.sendFile(path.join(__dirname, "../../main.html"))
+    // },
+    // style: (req, res) => {
+    //     res.sendFile(path.join(__dirname, "../../main.css"))
+    // },
+    // js: (req, res) => {
+    //     res.sendFile(path.join(__dirname, "../../main.js"))
+    // },
+    seed: (req, res) => {
+        sequelize.query(`
+        drop table if exists hikes;
+        drop table if exists mine;
+
+        CREATE TABLE hikes(
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(100) NOT NULL,
+            distance FLOAT NOT NULL,
+            elevation INT NOT NULL,
+            route VARCHAR(100) NOT NULL
+          );
+
+           
+          CREATE TABLE mine(
+            id SERIAL PRIMARY KEY,
+            hike VARCHAR(100) NOT NULL,
+            rating INT NOT NULL
+            );
+          
+          INSERT INTO hikes (name, distance, elevation, route)
+          VALUES ('Lone Peak', 15.6, 5554, 'Out & back'),
+          ('Mount Timpanogos', 14.3, 4448, 'Out & back'),
+          ('Cascade Mountain', 13.0, 5396, 'Out & back'),
+          ('Provo Peak', 11.6, 6522, 'Out & back'),
+          ('Mount Nebo', 8.6, 3569, 'Out & back'),
+          ('Spanish Fork Peak', 10.6, 4685, 'Out & back'),
+          ('Loafer Mountain', 11.2, 3536, 'Out & back');
+
+          INSERT INTO mine(hike, rating)
+          VALUES ('Big Baldy', 5);
+          `).then(() => {
+            console.log('DB seeded!')
+            res.sendStatus(200)
+        }).catch(err => console.log('error seeding DB', err))
     },
-    style: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../main.css"))
-    },
-    js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../main.js"))
-    },
+
     getHikes: (req, res) => {
         sequelize.query(`
-        SELECT * FROM hikes
+        SELECT * FROM mine
     `)
-        .then((dbRes) => {
-            res.status(200).send(dbRes[0])
-        })
-        .catch((err) => {
-            console.log(err)
-            res.status(500).send('error in getting hikes')
-        })
+            .then((dbRes) => {
+                res.status(200).send(dbRes[0])
+            })
     },
+
+    createHikes: (req, res) => {
+        const { hike, rating } = req.body
+
+        sequelize.query(`
+        INSERT INTO mine(hike, rating)
+          VALUES('${hike}', ${rating})
+          `)
+          .then((dbRes) => {
+            res.status(200).send(dbRes[0])
+          })
+    },
+
     deleteHikes: (req, res) => {
         const { id } = req.params
 
         sequelize.query(`
-        DELETE FROM hikes WHERE hike_id = ${id}
+        DELETE FROM mine WHERE id = ${id}
         `)
             .then((dbRes) => {
+                console.log(dbRes)
                 res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
                 res.status(500).send('sequelize error')
             })
-    },
-    createHikes: (req, res) => {
-        const { title, rating, imageUrl } = req.body
-       
-
-        // this code finds me the next, non-used id in my "database"
-        let greatestId = -1
-        for (let i = 0; i < hikes.length; i++) {
-            if (hikes[i].id > greatestId) {
-                greatestId = hikes[i].id
-            }
-        }
-        let nextId = greatestId + 1
-
-        let newHike = {
-            id: nextId,
-            title,
-            // same thing as: title: title
-            rating,
-            imageUrl
-        }
-
-        hikes.push(newHike)
-        // console.log(movies)
-        res.status(200).send(hikes)
-    },
-    // updateHikes: (req, res) => {
-    //     let type = req.body.type
-    //     let id = req.params.id
-    //     // console.log(type + ' to ' + id)
-    //     let index = movies.findIndex(element => element.id === +id)
-
-    //     if (type === 'plus') {
-    //         movies[index].rating++
-    //         res.status(200).send(movies)
-    //     } else if (type === 'minus') {
-    //         movies[index].rating--
-    //         res.status(200).send(movies)
-    //     } else {
-    //         res.sendStatus(400)
-    //     }
-    // }
+    }
 }

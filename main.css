@@ -95,6 +95,7 @@ form {
     height: 350px;
     /* background-color: #82816D; */
     background-color: #4B543B;
+    /* background-color: #4A5859; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -147,7 +148,8 @@ input[type='text'] {
 }
 
 .hike-card {
-    background-color: blanchedalmond;
+    background-color: #D1C6AD;
+    /* background-color: #BBADA0; */
     width: 200px;
     margin: 20px;
     display: flex;

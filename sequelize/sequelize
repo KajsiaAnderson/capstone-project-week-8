@@ -15,3 +15,12 @@
 -- ('Mount Nebo', 8.6, 3569, 'Out & back'),
 -- ('Spanish Fork Peak', 10.6, 4685, 'Out & back'),
 -- ('Loafer Mountain', 11.2, 3536, 'Out & back');
+
+
+-- CREATE TABLE mine(
+-- id SERIAL PRIMARY KEY,
+-- hike VARCHAR(100) NOT NULL,
+-- rating INT NOT NULL
+-- );
+-- INSERT INTO mine(hike, rating)
+-- VALUES ('Big Baldy', 5);
