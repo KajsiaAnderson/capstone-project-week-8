@@ -7,11 +7,11 @@ function handleSubmit(e) {
     e.preventDefault()
 
     if (nameInput.value < 1) {
-        alert ('You must enter a hike name')
+        alert('You must enter a hike name')
         return
     }
 
-    
+
     let userRating = document.querySelector('input[name="rating"]:checked').value
     // let image = document.querySelector('#img')
     let body = {
@@ -28,7 +28,7 @@ function handleSubmit(e) {
         })
 }
 
-function deleteCard(id){
+function deleteCard(id) {
     axios.delete(`http://localhost:4455/hikes/${id}`)
         .then(() => getHikes())
         .catch(err => console.log(err))

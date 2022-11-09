@@ -17,12 +17,25 @@
 	    </ol>
 	</nav>
     <content>
-        <section id="utah-hikes-list"></section>
+        <form class="calculator">
+            <label for="distance-input">Distance:</label>
+            <input type='text' id="distance-input" placeholder="Total miles" />
+            <label for="gain-input">Elevation Gain:</label>
+            <input type='text' id="gain-input" placeholder="Total elevation gain in ft" />
+            <label for="weather-input">Weather:</label>
+            <input type='text' id="weather-input" placeholder="Weather in fahrenheit" />
+            <label for="altitude-input">Altitude:</label>
+            <input type='text' id="altitude-input" placeholder="Altitude in ft" />
+            <label for="weight-input">Weight of Pack:</label>
+            <input type='text' id="weight-input" placeholder="Weight of pack in lb" />
+            <button>calculate</button>
+        </form>
 
+        <section id="total-water"></section>
 
     </content>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
+    <script src="water.js"></script>
 </body>
 </html>
