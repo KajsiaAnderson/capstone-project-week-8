@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Hikes</title>
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="main.css" />
 </head>
+
 <body>
     <header>Take a hike.</header>
     <nav class="nav-others">
-		<ol>
-	        <li class="crumb"><a href="./main.html">Home</a></li>
-	        <li class="crumb"><a href="./my-hikes.html">My Hikes</a></li>
-	        <li class="crumb"><a href="./utah-hikes.html">Utah Hikes</a></li>
-	    </ol>
-	</nav>
-    <content>
+        <ol>
+            <li class="crumb"><a href="./main.html">Home</a></li>
+            <li class="crumb"><a href="./my-hikes.html">My Hikes</a></li>
+            <li class="crumb"><a href="./water-calculator.html">Water Calculator</a></li>
+        </ol>
+    </nav>
+  <main>
+        <div class="water">
+        <h2 class="water-entry">How much water do you need?</h2>
         <form class="calculator">
             <label for="distance-input">Distance:</label>
             <input type='text' id="distance-input" placeholder="Total miles" />
             <label for="gain-input">Elevation Gain:</label>
-            <input type='text' id="gain-input" placeholder="Total elevation gain in ft" />
+            <input type='text' id="gain-input" placeholder="ft" />
             <label for="weather-input">Weather:</label>
-            <input type='text' id="weather-input" placeholder="Weather in fahrenheit" />
+            <input type='text' id="weather-input" placeholder="°F" />
             <label for="altitude-input">Altitude:</label>
-            <input type='text' id="altitude-input" placeholder="Altitude in ft" />
+            <input type='text' id="altitude-input" placeholder="ft" />
             <label for="weight-input">Weight of Pack:</label>
-            <input type='text' id="weight-input" placeholder="Weight of pack in lb" />
-            <button>calculate</button>
+            <input type='text' id="weight-input" placeholder="lb" />
+            <button id="calculate-btn">calculate</button>
         </form>
-
-        <section id="total-water"></section>
-
-    </content>
+        </div>
+    </main>
+    
+    <section id="total-water"></section>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="water.js"></script>
 </body>
+
 </html>

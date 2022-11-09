@@ -1,5 +1,3 @@
-console.log('tut')
-
 const distance = document.querySelector('#distance-input')
 const gain = document.querySelector('#gain-input')
 const weather = document.querySelector('#weather-input')
@@ -8,7 +6,6 @@ const weight = document.querySelector('#weight-input')
 const totalWater = document.querySelector('#total-water')
 
 const calculator = document.querySelector('.calculator')
-// const waterForm = document.querySelector('.water-form')
 
 
 
@@ -16,7 +13,23 @@ const calculator = document.querySelector('.calculator')
 
 function getWater(e) {
     e.preventDefault()
-//    waterForm.innerHTML = ''
+
+    if (distance.value < 1) {
+        alert('You must enter the total distance')
+        return
+    }
+    if (gain.value < 1) {
+        alert('You must enter the total elevation gain')
+        return
+    }
+    if (weather.value < 1) {
+        alert('You must enter the weather temperature')
+        return
+    }
+    if (altitude.value < 1) {
+        alert('You must enter the altitude')
+        return
+    }
 
    
             let totalDistance = +distance.value * 20
@@ -46,9 +59,8 @@ function getWater(e) {
             console.log(totalWeight)
             let totalMinutes = totalDistance + totalGain + totalTemp + totalAltitude + totalWeight
           
-            totalWater.innerHTML = (totalMinutes / 120).toFixed(2)
+            totalWater.innerHTML = ('You should bring at least ' + (totalMinutes / 120).toFixed(2) + ' liters of water')
         }
 
-// console.log(getWater(10, 2000, 80, 12000, 10))
 
 calculator.addEventListener('submit', getWater)

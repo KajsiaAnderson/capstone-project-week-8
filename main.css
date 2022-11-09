@@ -90,7 +90,7 @@ main {
     justify-content: center;
 }
 
-form {
+.hike-form {
     width: 350px;
     height: 350px;
     /* background-color: #82816D; */
@@ -191,4 +191,39 @@ input[type='text'] {
     border-radius: 12px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+}
+
+.water {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+} 
+
+.water-entry {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    color: white;
+    width: 350px;
+    height: 350px;
+    /* background-color: #82816D; */
+    background-color: #4B543B;
+    /* background-color: #4A5859; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+    margin-top: 3%;
+}
+
+#total-water {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
 }
