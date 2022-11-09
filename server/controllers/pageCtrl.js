@@ -36,13 +36,13 @@ module.exports = {
           );
           
           INSERT INTO hikes (name, distance, elevation, route, rating)
-          VALUES ('Lone Peak', 16.8, 5554, 'Out & back', 5),
-          ('Mount Timpanogos', 14.3, 4448, 'Out & back', 5),
-          ('Cascade Mountain', 16.7, 5396, 'Out & back', 4),
-          ('Provo Peak', 11.6, 6522, 'Out & back', 1),
-          ('Mount Nebo', 8.6, 3569, 'Out & back', 4),
-          ('Spanish Fork Peak', 10.6, 4685, 'Out & back', 3),
-          ('Loafer Mountain', 11.2, 3536, 'Out & back', 2);
+          VALUES ('Lone Peak', 16.8, 5554, 'Out & Back', 5),
+          ('Mount Timpanogos', 14.3, 4448, 'Out & Back', 5),
+          ('Cascade Mountain', 16.7, 5396, 'Out & Back', 4),
+          ('Provo Peak', 11.6, 6522, 'Out & Back', 1),
+          ('Mount Nebo', 8.6, 3569, 'Out & Back', 4),
+          ('Spanish Fork Peak', 10.6, 4685, 'Out & Back', 3),
+          ('Loafer Mountain', 11.2, 3536, 'Out & Back', 2);
           `).then(() => {
             console.log('DB seeded!')
             res.sendStatus(200)
@@ -52,6 +52,7 @@ module.exports = {
     getHikes: (req, res) => {
         sequelize.query(`
         SELECT * FROM hikes
+        ORDER BY rating DESC;
     `)
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])

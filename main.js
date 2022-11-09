@@ -3,7 +3,7 @@ const hikeList = document.querySelector('#hike-list')
 const nameInput = document.querySelector('#name-input')
 const distanceInput = document.querySelector('#distance-input')
 const elevationInput = document.querySelector('#elevation-input')
-const routeInput = document.querySelector('#route-input')
+const routeInput = document.querySelector('#route-input-dropdown')
 
 
 function handleSubmit(e) {
@@ -62,11 +62,11 @@ function getHikes() {
             res.data.forEach(elem => {
                 let hikeCard = `<div class="hike-card">
                     <h2>${elem.name}</h2>
-                    <h3>${elem.distance} miles</h3>
-                    <h3>${elem.elevation} ft</h3>
-                    <h3>${elem.route}</h3>
-                    <h3>Rating: ${elem.rating}/5</h3>
-                    <button onclick="deleteCard(${elem.id})">Delete</button>
+                    <p class="card-p">${elem.distance} miles</p>
+                    <p class="card-p">${elem.elevation} ft</p>
+                    <p class="card-p">${elem.route}</p>
+                    <p class="card-p">Rating: ${elem.rating}/5</p>
+                    <button class="delete-btn" onclick="deleteCard(${elem.id})">delete</button>
                     </div>
                 `
 

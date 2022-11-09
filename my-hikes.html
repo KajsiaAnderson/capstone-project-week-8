@@ -30,7 +30,10 @@
                 <label for="elevation-input">Elevation Gain:</label>
                 <input type='text' id="elevation-input" placeholder="ft" />
                 <label for="route-input">Route:</label>
-                <input type='text' id="route-input" placeholder="out & back or loop" />
+                <select id="route-input-dropdown">
+                    <option value="out-back">Out & Back</option>
+                    <option value="loop">Loop</option>
+                </select>
 
                 <section id="ratings-container">
                     <p>Rate the hike:</p>
@@ -51,7 +54,7 @@
                         <input type="radio" name="rating" value="5" id="rating-five" />
                     </div>
                 </section>
-                <button>add</button>
+                <button class="add-btn">add</button>
             </form>
         </aside>
 
