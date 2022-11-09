@@ -1,6 +1,9 @@
 const form = document.querySelector('form')
 const hikeList = document.querySelector('#hike-list')
 const nameInput = document.querySelector('#name-input')
+const distanceInput = document.querySelector('#distance-input')
+const elevationInput = document.querySelector('#elevation-input')
+const routeInput = document.querySelector('#route-input')
 
 
 function handleSubmit(e) {
@@ -10,19 +13,36 @@ function handleSubmit(e) {
         alert('You must enter a hike name')
         return
     }
+    if (distanceInput.value < 1) {
+        alert('You must enter the distance')
+        return
+    }
+    if (elevationInput.value < 1) {
+        alert('You must enter the elevation gain')
+        return
+    }
+    if (routeInput.value < 1) {
+        alert('You must enter the route type')
+        return
+    }
 
 
     let userRating = document.querySelector('input[name="rating"]:checked').value
     // let image = document.querySelector('#img')
     let body = {
-        hike: nameInput.value,
+        name: nameInput.value,
+        distance: distanceInput.value,
+        elevation: elevationInput.value,
+        route: routeInput.value,
         rating: +userRating,
-        // imageUrl: image.value
     }
 
     axios.post('http://localhost:4455/hikes', body)
         .then(() => {
             nameInput.value = ''
+            distanceInput.value = ''
+            elevationInput.value = ''
+            routeInput.value = ''
             document.querySelector('#rating-one').checked = true
             getHikes()
         })
@@ -41,7 +61,10 @@ function getHikes() {
         .then(res => {
             res.data.forEach(elem => {
                 let hikeCard = `<div class="hike-card">
-                    <h2>${elem.hike}</h2>
+                    <h2>${elem.name}</h2>
+                    <h3>${elem.distance} miles</h3>
+                    <h3>${elem.elevation} ft</h3>
+                    <h3>${elem.route}</h3>
                     <h3>Rating: ${elem.rating}/5</h3>
                     <button onclick="deleteCard(${elem.id})">Delete</button>
                     </div>

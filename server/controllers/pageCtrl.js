@@ -25,34 +25,24 @@ module.exports = {
     seed: (req, res) => {
         sequelize.query(`
         drop table if exists hikes;
-        drop table if exists mine;
 
         CREATE TABLE hikes(
             id SERIAL PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             distance FLOAT NOT NULL,
             elevation INT NOT NULL,
-            route VARCHAR(100) NOT NULL
-          );
-
-           
-          CREATE TABLE mine(
-            id SERIAL PRIMARY KEY,
-            hike VARCHAR(100) NOT NULL,
+            route VARCHAR(100) NOT NULL,
             rating INT NOT NULL
-            );
+          );
           
-          INSERT INTO hikes (name, distance, elevation, route)
-          VALUES ('Lone Peak', 15.6, 5554, 'Out & back'),
-          ('Mount Timpanogos', 14.3, 4448, 'Out & back'),
-          ('Cascade Mountain', 13.0, 5396, 'Out & back'),
-          ('Provo Peak', 11.6, 6522, 'Out & back'),
-          ('Mount Nebo', 8.6, 3569, 'Out & back'),
-          ('Spanish Fork Peak', 10.6, 4685, 'Out & back'),
-          ('Loafer Mountain', 11.2, 3536, 'Out & back');
-
-          INSERT INTO mine(hike, rating)
-          VALUES ('Big Baldy', 5);
+          INSERT INTO hikes (name, distance, elevation, route, rating)
+          VALUES ('Lone Peak', 16.8, 5554, 'Out & back', 5),
+          ('Mount Timpanogos', 14.3, 4448, 'Out & back', 5),
+          ('Cascade Mountain', 16.7, 5396, 'Out & back', 4),
+          ('Provo Peak', 11.6, 6522, 'Out & back', 1),
+          ('Mount Nebo', 8.6, 3569, 'Out & back', 4),
+          ('Spanish Fork Peak', 10.6, 4685, 'Out & back', 3),
+          ('Loafer Mountain', 11.2, 3536, 'Out & back', 2);
           `).then(() => {
             console.log('DB seeded!')
             res.sendStatus(200)
@@ -61,7 +51,7 @@ module.exports = {
 
     getHikes: (req, res) => {
         sequelize.query(`
-        SELECT * FROM mine
+        SELECT * FROM hikes
     `)
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
@@ -69,22 +59,25 @@ module.exports = {
     },
 
     createHikes: (req, res) => {
-        const { hike, rating } = req.body
+        const { name, distance, elevation, route, rating } = req.body
 
         sequelize.query(`
-        INSERT INTO mine(hike, rating)
-          VALUES('${hike}', ${rating})
+        INSERT INTO hikes (name, distance, elevation, route, rating)
+          VALUES ('${name}', ${distance}, ${elevation}, '${route}', ${rating});
+          
+          SELECT * FROM hikes
+          ORDER BY rating DESC;
           `)
-          .then((dbRes) => {
-            res.status(200).send(dbRes[0])
-          })
+            .then((dbRes) => {
+                res.status(200).send(dbRes[0])
+            })
     },
 
     deleteHikes: (req, res) => {
         const { id } = req.params
 
         sequelize.query(`
-        DELETE FROM mine WHERE id = ${id}
+        DELETE FROM hikes WHERE id = ${id}
         `)
             .then((dbRes) => {
                 console.log(dbRes)

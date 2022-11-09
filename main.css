@@ -1,6 +1,7 @@
 * {
-    font-family: "Geneva",sans-serif;
+    font-family: "Geneva", sans-serif;
 }
+
 .main-page {
     /* background-image: url('https://source.unsplash.com/xaaMf_0IhVs'); */
     background-image: url('https://source.unsplash.com/wxkHg1Tegh4');
@@ -22,7 +23,7 @@
 }
 
 .nav-others {
-	border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
     border-width: 25%;
     display: flex;
     align-items: center;
@@ -33,26 +34,26 @@
 }
 
 ol {
-	padding-left: 0;
+    padding-left: 0;
 }
 
 .crumb {
-	margin-right: 2em;
-	display: inline;
+    margin-right: 2em;
+    display: inline;
 }
 
 a:link {
-    font-family: "Geneva",sans-serif;
-	color: black;
+    font-family: "Geneva", sans-serif;
+    color: black;
 }
 
 a:visited {
-	color: rgb(61, 116, 53);
+    color: rgb(61, 116, 53);
 }
 
 a:hover {
     color: rgb(167, 76, 43);
-  }
+}
 
 .title {
     /* background: rgba(0, 0, 0, .5); */
@@ -60,7 +61,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "American Typewriter",sans-serif;
+    font-family: "American Typewriter", sans-serif;
     /* font-weight: bold; */
     color: black;
     margin-top: 10%;
@@ -69,11 +70,11 @@ a:hover {
     padding: 2%;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "American Typewriter",sans-serif;
+    font-family: "American Typewriter", sans-serif;
     font-size: 80px;
     color: black;
 }
@@ -85,6 +86,7 @@ header{
     display: flex;
     justify-content: center;
 }
+
 main {
     display: flex;
     justify-content: center;
@@ -102,6 +104,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     margin: 30px;
+    color: white;
 }
 
 button {
@@ -150,7 +153,7 @@ input[type='text'] {
 .hike-card {
     background-color: #D1C6AD;
     /* background-color: #BBADA0; */
-    width: 200px;
+    width: 300px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -160,14 +163,19 @@ input[type='text'] {
     border-top-right-radius: 15px;
 }
 
-.hike-title {
+/* .hike-title {
     font-size: 18px;
     margin: 5px 0;
-}
+} */
 
-.hike-rating {
+/* .hike-rating {
     font-size: 15px;
     margin: 5px 0;
+} */
+#hike-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btns-container {
@@ -177,7 +185,7 @@ input[type='text'] {
     margin: 5px;
 }
 
-.btns-container > button {
+.btns-container>button {
     width: 20px;
 }
 
@@ -198,7 +206,7 @@ input[type='text'] {
     flex-direction: column;
     align-self: center;
     justify-content: center;
-} 
+}
 
 .water-entry {
     display: flex;
