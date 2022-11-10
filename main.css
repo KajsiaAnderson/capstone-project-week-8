@@ -1,16 +1,20 @@
 * {
-    font-family: "Geneva", sans-serif;
-    /* font-family: "Montserrat", Sans-serif; */
+    font-family: "Hind", sans-serif;
 }
 
 .main-page {
-    /* background-image: url('https://source.unsplash.com/xaaMf_0IhVs'); */
     background-image: url('https://source.unsplash.com/wxkHg1Tegh4');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
+.second-page {
+    /* background-color: #f3f3f3; */
+    /* background-color: #e9e9e9; */
+    background-color: #dededf;
+}
+
 
 .nav-main {
     border-bottom: 2px solid black;
@@ -34,25 +38,27 @@
     margin-top: 0%;
 }
 
-ol {
-    padding-left: 0;
-}
-
 .crumb {
     margin-right: 2em;
     display: inline;
 }
 
-a:link {
-    font-family: "Geneva", sans-serif;
+.nav-a:link {
     color: black;
 }
 
-a:visited {
-    color: rgb(61, 116, 53);
+.nav-a:visited {
+    color: #8CADA7;
 }
 
-a:hover {
+.nav-a:hover {
+    color: rgb(167, 76, 43);
+}
+.main-a {
+    color: black;
+    text-decoration: none;
+}
+.main-a:hover {
     color: rgb(167, 76, 43);
 }
 
@@ -65,10 +71,11 @@ a:hover {
     font-family: "Montserrat", sans-serif;
     font-weight: 100;
     color: black;
-    margin-top: 10%;
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 2%;
+    margin-top: 15%;
+    margin-left: 38%;
+    margin-right: 38%;
+    border: solid;
+    width: 24%;
 }
 
 header {
@@ -186,19 +193,19 @@ input[type='text'] {
 }
 
 .hike-card {
-    background-color: #d5d5d3;
+    background-color: white;
     /* background-color: #BBADA0; */
     width: 300px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
-    /* border-top-left-radius: 15px;
-    border-top-right-radius: 15px; */
-    border-color: black;
-    filter: drop-shadow(16px 16px 10px black);
+    filter: drop-shadow(8px 8px 10px black);
     font-size: 20px;
+    border-style: solid;
+    border-color: #4A5859;
+    border-width: 10px;
+    border-radius: 12px;
 }
 
 .delete-btn {
@@ -207,24 +214,21 @@ input[type='text'] {
     height: 25px;
     color: black;
     border-style: solid;
-    border-color: black;
+    border-color: #4A5859;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
 .card-p {
     margin-top: 0;
 }
 
-/* .hike-title {
-    font-size: 18px;
-    margin: 5px 0;
-} */
-
-/* #distance-input {
-    font-size: 10px;
-    margin: 5px 0;
-} */
+.rate {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
 
 #hike-list {
     display: flex;
@@ -260,16 +264,32 @@ input[type='text'] {
     color: white;
     width: 350px;
     height: 350px;
-    /* background-color: #82816D; */
-    background-color: #4B543B;
-    /* background-color: #4A5859; */
-    position: relative;
+    /* background-color: #4B543B; */
+    /* background-color: #ACBDBA; */
+    background-color: #4A5859;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     margin: 30px;
     margin-top: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 12px;
+    filter: drop-shadow(8px 8px 8px black);
+}
+
+#calculate-btn {
+    background-color: white;
+    width: 75px;
+    height: 25px;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 #total-water {
@@ -277,4 +297,5 @@ input[type='text'] {
     justify-content: center;
     font-weight: bold;
     font-size: 30px;
+    margin-top: 10px;
 }

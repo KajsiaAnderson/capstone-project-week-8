@@ -22,7 +22,7 @@ function handleSubmit(e) {
         return
     }
     if (routeInput.value < 1) {
-        alert('You must enter the route type')
+        alert('You must select a route type')
         return
     }
 
