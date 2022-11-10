@@ -10,18 +10,22 @@
 </head>
 
 <body class="second-page">
-    <header>Take a hike</header>
-    <nav class="nav-others">
-        <ol>
-	        <li class="crumb"><a class="nav-a" href="./main.html">Home</a></li>
-	        <li class="crumb"><a class="nav-a" href="./my-hikes.html">My Hikes</a></li>
-	        <li class="crumb"><a class="nav-a" href="./water-calculator.html">Water Calculator</a></li>
-	    </ol>
-    </nav>
-    <main>
-        <aside>
-            <h2 class="add-entry">Add an Entry</h2>
+    <header class="hike-header"><img class="logo" src="./logo-new.png" alt="take a hike logo">
 
+        <nav class="nav-others">
+            <ol>
+                <li class="crumb"><a class="nav-a" href="./main.html">Home</a></li>
+                <li class="crumb"><a class="nav-a" href="./my-hikes.html">Hikes</a></li>
+                <li class="crumb"><a class="nav-a" href="./water-calculator.html">Water Calculator</a></li>
+            </ol>
+        </nav>
+    </header>
+    <div class="block">
+        <h2 class="page-title">MY HIKES</h2>
+    </div>
+    <main>
+        <div>
+            <h2 class="entry-description">How was your hike?</h2>
             <form class="hike-form">
                 <label for="name-input">Hike:</label>
                 <input type='text' id="name-input" placeholder="Enter name of hike" />
@@ -56,11 +60,11 @@
                 </section>
                 <button class="add-btn">add</button>
             </form>
-        </aside>
+        </div>
 
 
     </main>
-        <section id="hike-list"></section>
+    <section id="hike-list"></section>
 
 
 
