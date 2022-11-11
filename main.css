@@ -10,13 +10,17 @@
     background-size: cover;
 }
 .second-page {
-    /* background-color: #f3f3f3; */
     /* background-color: #e9e9e9; */
-    background-color: #dededf;
+    /* background-color: #dededf; */
+    margin: 0%;
 }
 
+main {
+    /* background-color: #dededf; */
+    background-color: #4A5859;
+}
 
-.nav-main {
+/* .nav-main {
     border-bottom: 2px solid black;
     border-width: 25%;
     display: flex;
@@ -25,19 +29,19 @@
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 3%;
-}
+} */
 
 .nav-others {
-    border-bottom: 2px solid black;
-    border-width: 25%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 0%;
+    justify-content: end;
+    width: 250%;
 }
 
+ol {
+    margin-top: 2%;
+    margin-right: 2%;
+    padding-left: 0%;
+}
 .crumb {
     margin-right: 2em;
     display: inline;
@@ -45,60 +49,74 @@
 
 .nav-a:link {
     color: black;
+    text-decoration: none;
 }
 
 .nav-a:visited {
-    color: #8CADA7;
+    /* color: #8CADA7; */
+    color: #4A5859;
 }
 
 .nav-a:hover {
     color: rgb(167, 76, 43);
 }
-.main-a {
-    color: black;
-    text-decoration: none;
-}
+
 .main-a:hover {
     color: rgb(167, 76, 43);
 }
 
-.title {
+/* .home { */
     /* background: rgba(0, 0, 0, .5); */
-    font-size: 80px;
+    /* font-size: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 100;
     color: black;
-    margin-top: 15%;
-    margin-left: 38%;
-    margin-right: 38%;
-    border: solid;
-    width: 24%;
+    margin-top: 15%; */
+    /* border: solid; */
+    /* width: 50vw;
+    margin-inline: auto;
+/* } */
+
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    margin-top: 20%;
 }
 
-header {
+.logo {
+    height: 10vh;
+}
+
+.hike-header {
     display: flex;
-    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.block {
+    background-color: white;
+    width: 100%;
+    height: 25%;
+}
+.page-title {
+    display: flex;
     justify-content: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 80px;
+    margin-top: 3%;
+    margin-bottom: 0%;
+    font-size: 100px;
     font-weight: 100;
-    color: black;
-}
-
-
-/* my-hikes.html */
-
-.add-entry {
-    display: flex;
-    justify-content: center;
+    font-family: "Montserrat", sans-serif;
 }
 
 main {
     display: flex;
     justify-content: center;
+
 }
 
 .hike-form {
@@ -117,8 +135,10 @@ main {
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: solid;
-    border-color: black;
+    border-color: white;
     border-radius: 12px;
+    border-width: 10px;
+    /* filter: drop-shadow(8px 8px 10px black); */
 }
 
 .add-btn {
@@ -127,7 +147,7 @@ main {
     height: 25px;
     color: black;
     border-style: solid;
-    border-color: black;
+    border-color: #32373b;
     border-radius: 10px;
     margin-top: 15px;
 }
@@ -162,8 +182,8 @@ input[type='text'] {
     width: 80%;
     height: 30px;
     border: none;
-    border-bottom: 2px solid #232323;
-    color: #232323;
+    /* border: 2px solid black; */
+    color: white;
     background-color: white;
 }
 
@@ -234,6 +254,7 @@ input[type='text'] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 1%;
 }
 
 #utah-hikes-list {
@@ -255,9 +276,11 @@ input[type='text'] {
     justify-content: center;
 }
 
-.water-entry {
+.entry-description {
     display: flex;
     justify-content: center;
+    font-weight: 100;
+    color: white;
 }
 
 .calculator {
@@ -276,9 +299,10 @@ input[type='text'] {
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: solid;
-    border-color: black;
+    border-color: white;
     border-radius: 12px;
-    filter: drop-shadow(8px 8px 8px black);
+    border-width: 10px;
+    /* filter: drop-shadow(8px 8px 8px black); */
 }
 
 #calculate-btn {
@@ -287,7 +311,7 @@ input[type='text'] {
     height: 25px;
     color: black;
     border-style: solid;
-    border-color: black;
+    border-color: #32373b;
     border-radius: 10px;
     margin-top: 15px;
 }
@@ -297,5 +321,6 @@ input[type='text'] {
     justify-content: center;
     font-weight: bold;
     font-size: 30px;
-    margin-top: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
