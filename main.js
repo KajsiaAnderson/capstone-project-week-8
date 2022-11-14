@@ -37,7 +37,7 @@ function handleSubmit(e) {
         rating: +userRating,
     }
 
-    axios.post('http://localhost:4455/hikes', body)
+    axios.post('/hikes', body)
         .then(() => {
             nameInput.value = ''
             distanceInput.value = ''
@@ -49,7 +49,7 @@ function handleSubmit(e) {
 }
 
 function deleteCard(id) {
-    axios.delete(`http://localhost:4455/hikes/${id}`)
+    axios.delete(`/hikes/${id}`)
         .then(() => getHikes())
         .catch(err => console.log(err))
 }
@@ -57,7 +57,7 @@ function deleteCard(id) {
 function getHikes() {
     hikeList.innerHTML = ''
 
-    axios.get('http://localhost:4455/hikes')
+    axios.get('/hikes')
         .then(res => {
             res.data.forEach(elem => {
                 let hikeCard = `<div class="hike-card">

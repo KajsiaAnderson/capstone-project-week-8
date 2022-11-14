@@ -13,15 +13,27 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
-    // home: (req, res) => {
-    //     res.sendFile(path.join(__dirname, "../../main.html"))
-    // },
-    // style: (req, res) => {
-    //     res.sendFile(path.join(__dirname, "../../main.css"))
-    // },
-    // js: (req, res) => {
-    //     res.sendFile(path.join(__dirname, "../../main.js"))
-    // },
+    home: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../main.html"))
+    },
+    style: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../main.css"))
+    },
+    js: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../main.js"))
+    },
+    waterJs: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../water.js"))
+    },
+    hikesHtml: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../my-hikes.html"))
+    },
+    waterHtml: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../water-calculator.html"))
+    },
+    logo: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../logo-new.png"))
+    },
     seed: (req, res) => {
         sequelize.query(`
         drop table if exists hikes;

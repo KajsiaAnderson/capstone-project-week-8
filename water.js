@@ -19,11 +19,11 @@ function getWater(e) {
         return
     }
     if (gain.value < 1) {
-        alert('You must enter the total elevation gain')
+        alert('You must enter the elevation gain')
         return
     }
     if (weather.value < 1) {
-        alert('You must enter the weather temperature')
+        alert('You must enter the temperature')
         return
     }
     if (altitude.value < 1) {
