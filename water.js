@@ -34,7 +34,7 @@ function getWater(e) {
    
             let totalDistance = +distance.value * 20
             console.log(totalDistance)
-            let totalGain = +gain.value / 16.66
+            let totalGain = +gain.value / 33.33
             console.log(totalGain)
             let totalTemp = +weather.value - 80
             if (totalTemp > 0) {

@@ -28,7 +28,7 @@ function handleSubmit(e) {
 
 
     let userRating = document.querySelector('input[name="rating"]:checked').value
-    // let image = document.querySelector('#img')
+
     let body = {
         name: nameInput.value,
         distance: distanceInput.value,
