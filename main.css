@@ -90,6 +90,10 @@ ol {
 
 .logo {
     height: 10vh;
+    transition: 0.3s;
+}
+.logo:hover {
+    height: 10.2vh;
 }
 
 .hike-header {
@@ -138,7 +142,10 @@ main {
     border-color: white;
     border-radius: 12px;
     border-width: 10px;
-    /* filter: drop-shadow(8px 8px 10px black); */
+    transition: 0.3s;
+}
+.hike-form:hover {
+    filter: drop-shadow(8px 8px 10px black);
 }
 
 .add-btn {
@@ -147,10 +154,17 @@ main {
     height: 25px;
     color: black;
     border-style: solid;
-    border-color: #32373b;
+    border-color: white;
     border-radius: 10px;
     margin-top: 15px;
+    transition: 0.3s;
 }
+.add-btn:hover {
+    border-color: #32373b;
+    font-weight: bold;
+    font-size: 13.7px;
+}
+
 #rating-one {
     margin-right: 15px;
     margin-left: 0px;
@@ -226,6 +240,10 @@ input[type='text'] {
     border-color: #4A5859;
     border-width: 10px;
     border-radius: 12px;
+    transition: 0.3s;
+}
+.hike-card:hover {
+    border-width: 15px;
 }
 
 .delete-btn {
@@ -238,6 +256,12 @@ input[type='text'] {
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
+    transition: 0.3s;
+}
+.delete-btn:hover {
+    border-color: #7e9293;
+    font-weight: bold;
+    font-size: 13.7px;
 }
 
 .card-p {
@@ -302,7 +326,10 @@ input[type='text'] {
     border-color: white;
     border-radius: 12px;
     border-width: 10px;
-    /* filter: drop-shadow(8px 8px 8px black); */
+    transition: 0.3s;
+}
+.calculator:hover {
+    filter: drop-shadow(8px 8px 10px black);
 }
 
 #calculate-btn {
@@ -311,9 +338,15 @@ input[type='text'] {
     height: 25px;
     color: black;
     border-style: solid;
-    border-color: #32373b;
+    border-color: white;
     border-radius: 10px;
     margin-top: 15px;
+    transition: 0.3s;
+}
+#calculate-btn:hover {
+    font-weight: bold;
+    border-color: #32373b;
+    font-size: 13.7px;
 }
 
 #total-water {
