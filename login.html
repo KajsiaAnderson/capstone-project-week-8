@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/loginCss">
+</head>
+<body>
+    <header class="hike-header"><a href="/"><img class="logo" src="/logo" alt="take a hike logo"></a>
+
+        <nav class="nav-others">
+            <ol>
+                <li class="crumb"><a class="nav-a" href="/hikesHtml">Hikes</a></li>
+                <li class="crumb"><a class="nav-a" href="/waterHtml">Water Calculator</a></li>
+                <li class="crumb"><a class="nav-a" href="/login">Login</a></li>
+            </ol>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="form_container" id="loginDiv">
+
+            <form class="login" id="login">
+                <!-- <img class="login_logo" src="/logo" alt="Take a Hike Logo"> -->
+
+                <label>Email:</label>
+                <input class="register_form_input" id="loginEmail" type="text" placeholder="Email Address">
+
+                <lablel>Password:</lablel>
+                <input class="register_form_input" id="loginPassword" type="password" placeholder="Password">
+
+                <p class="log">Not registered yet?
+                    <a id="login_toggle" class="form_toggle" type="button">Register Here</a>
+                </p>
+             
+                <p><input class="form_button" type="submit" value="Login"></p>
+
+            </form>
+        </div>
+
+        <div class="form_container active" id="registerDiv">
+            
+            <form class="register" id="register">
+                <!-- <img class="register_logo" src="/logo" alt="Take a Hike Logo"> -->
+
+                <label>First Name:</label>
+                <input class="register_form_input" id="first_name" type="text" placeholder="First Name" required/>
+
+                <label>Last Name:</label>
+                <input class="register_form_input" id="last_name" type="text" placeholder="Last Name" required/>
+
+                <label>Email:</label>
+                <input class="register_form_input" id="email" type="text" placeholder="Email Address" required/>
+
+                <lablel>Password:</lablel>
+                <input class="register_form_input" id="password" type="password" placeholder="Password" required/>
+
+                <lablel>Confirm Password:</lablel>
+                <input class="register_form_input" id="confirm_password" type="password" placeholder="Confirm Password" required/>
+
+                <p class="forgot_login">Already registered?
+                    <a id="register_toggle" class="form_toggle" type="button">Sign-in Here</a>
+                </p>
+
+                <p><input id="signup_button" class="form_button" type="submit" value="Sign-up"></p>
+            </form>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/loginJs"></script>
+</body>
+</html>
