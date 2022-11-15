@@ -86,6 +86,10 @@ ol {
     justify-content: center;
     margin-inline: auto;
     margin-top: 20%;
+    transition: 0.3s;
+}
+.main-div:hover{
+   filter: drop-shadow(8px 8px 10px #4A5859);
 }
 
 .logo {
