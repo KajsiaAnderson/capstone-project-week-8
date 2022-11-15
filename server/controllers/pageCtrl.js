@@ -100,5 +100,31 @@ module.exports = {
                 console.log(err)
                 res.status(500).send('sequelize error')
             })
+    },
+
+    register: (req, res) => {
+        const { first_name, last_name, email, password } = req.body
+
+        sequelize.query(`
+        INSERT INTO login (first_name, last_name, email, password)
+          VALUES ('${first_name}', '${last_name}', '${email}', '${password}');
+          `)
+            .then((dbRes) => {
+                res.status(200).send(dbRes[0])
+            })
+    },
+
+    login:(req, res) => {
+        const { email, password } = req.body
+        sequelize.query(`
+        SELECT email, password
+        FROM login
+        WHERE email = ('${email}') AND password = ('${password}')
+    `)
+            .then((dbRes) => {
+                res.status(200).send(dbRes[0])
+            })
+
+            // select hikes from database that is with the user id
     }
 }

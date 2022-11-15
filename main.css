@@ -10,26 +10,12 @@
     background-size: cover;
 }
 .second-page {
-    /* background-color: #e9e9e9; */
-    /* background-color: #dededf; */
     margin: 0%;
 }
 
 main {
-    /* background-color: #dededf; */
     background-color: #4A5859;
 }
-
-/* .nav-main {
-    border-bottom: 2px solid black;
-    border-width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 3%;
-} */
 
 .nav-others {
     display: flex;
@@ -53,7 +39,6 @@ ol {
 }
 
 .nav-a:visited {
-    /* color: #8CADA7; */
     color: #4A5859;
 }
 
@@ -65,38 +50,24 @@ ol {
     color: rgb(167, 76, 43);
 }
 
-/* .home { */
-    /* background: rgba(0, 0, 0, .5); */
-    /* font-size: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 100;
-    color: black;
-    margin-top: 15%; */
-    /* border: solid; */
-    /* width: 50vw;
-    margin-inline: auto;
-/* } */
-
-
 .main-div {
     display: flex;
     justify-content: center;
     margin-inline: auto;
     margin-top: 20%;
-    transition: 0.3s;
+    transition: 1s;
 }
 .main-div:hover{
-   filter: drop-shadow(8px 8px 10px #4A5859);
+    transition: 0.3s;
+    filter: drop-shadow(8px 8px 10px #4A5859);
 }
 
 .logo {
     height: 10vh;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .logo:hover {
+    transition: 0.3s;
     height: 10.2vh;
 }
 
@@ -111,6 +82,7 @@ ol {
     width: 100%;
     height: 25%;
 }
+
 .page-title {
     display: flex;
     justify-content: center;
@@ -124,14 +96,11 @@ ol {
 main {
     display: flex;
     justify-content: center;
-
 }
 
 .hike-form {
     width: 350px;
     height: 350px;
-    /* background-color: #4B543B; */
-    /* background-color: #ACBDBA; */
     background-color: #4A5859;
     position: relative;
     display: flex;
@@ -146,9 +115,10 @@ main {
     border-color: white;
     border-radius: 12px;
     border-width: 10px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .hike-form:hover {
+    transition: 0.3s;
     filter: drop-shadow(8px 8px 10px black);
 }
 
@@ -161,9 +131,10 @@ main {
     border-color: white;
     border-radius: 10px;
     margin-top: 15px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .add-btn:hover {
+    transition: 0.3s;
     border-color: #32373b;
     font-weight: bold;
     font-size: 13.7px;
@@ -200,7 +171,6 @@ input[type='text'] {
     width: 80%;
     height: 30px;
     border: none;
-    /* border: 2px solid black; */
     color: black;
     background-color: white;
 }
@@ -232,7 +202,6 @@ input[type='text'] {
 
 .hike-card {
     background-color: white;
-    /* background-color: #BBADA0; */
     width: 300px;
     margin: 20px;
     display: flex;
@@ -244,9 +213,10 @@ input[type='text'] {
     border-color: #4A5859;
     border-width: 10px;
     border-radius: 12px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .hike-card:hover {
+    transition: 0.3s;
     border-width: 15px;
 }
 
@@ -260,9 +230,10 @@ input[type='text'] {
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .delete-btn:hover {
+    transition: 0.3s;
     border-color: #7e9293;
     font-weight: bold;
     font-size: 13.7px;
@@ -315,8 +286,6 @@ input[type='text'] {
     color: white;
     width: 350px;
     height: 350px;
-    /* background-color: #4B543B; */
-    /* background-color: #ACBDBA; */
     background-color: #4A5859;
     display: flex;
     flex-direction: column;
@@ -330,9 +299,10 @@ input[type='text'] {
     border-color: white;
     border-radius: 12px;
     border-width: 10px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 .calculator:hover {
+    transition: 0.3s;
     filter: drop-shadow(8px 8px 10px black);
 }
 
@@ -345,9 +315,10 @@ input[type='text'] {
     border-color: white;
     border-radius: 10px;
     margin-top: 15px;
-    transition: 0.3s;
+    transition: 0.8s;
 }
 #calculate-btn:hover {
+    transition: 0.3s;
     font-weight: bold;
     border-color: #32373b;
     font-size: 13.7px;
