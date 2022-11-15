@@ -72,7 +72,8 @@ module.exports = {
     },
 
     createHikes: (req, res) => {
-        const { name, distance, elevation, route, rating } = req.body
+        let { name, distance, elevation, route, rating } = req.body
+        name = name.replaceAll("'", "''")
 
         sequelize.query(`
         INSERT INTO hikes (name, distance, elevation, route, rating)
