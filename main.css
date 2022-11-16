@@ -97,6 +97,24 @@ ol {
     font-weight: 100;
     font-family: 'Montserrat', sans-serif;
 }
+.page-title-calc {
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 80px;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+}
+.page-title-water {
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 80px;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+}
 
 main {
     display: flex;
@@ -121,6 +139,7 @@ main {
     border-radius: 12px;
     border-width: 10px;
     transition: 0.8s;
+    margin-top: 8%;
 }
 
 .hike-form:hover {
@@ -193,6 +212,9 @@ input[type='text'] {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+input[type='radio'] {
+    accent-color: rgb(204, 106, 70);
 }
 
 #hike-container {
@@ -301,7 +323,7 @@ input[type='text'] {
     justify-content: space-evenly;
     align-items: center;
     margin: 30px;
-    margin-top: 3%;
+    margin-top: 8%;
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: solid;
