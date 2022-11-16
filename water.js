@@ -60,6 +60,7 @@ function getWater(e) {
             let totalMinutes = totalDistance + totalGain + totalTemp + totalAltitude + totalWeight
           
             totalWater.innerHTML = ('You should bring at least ' + (totalMinutes / 120).toFixed(2) + ' liters of water')
+            calculator.reset()
         }
 
 

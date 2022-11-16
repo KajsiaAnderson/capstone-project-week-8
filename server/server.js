@@ -22,17 +22,19 @@ app.get('/logo', logo)
 app.get('/login', (req, res) => { res.sendFile(path.join(__dirname, "../login.html"))})
 app.get('/loginCss', (req, res) => { res.sendFile(path.join(__dirname, "../login.css"))})
 app.get('/loginJs', (req, res) => { res.sendFile(path.join(__dirname, "../login.js"))})
+app.get('/logoutJs', (req, res) => { res.sendFile(path.join(__dirname, "../logout.js"))})
 
 
 
-const { seed, getHikes, createHikes, deleteHikes, register, login } = require('./controllers/pageCtrl')
+const { getHikes, createHikes, deleteHikes, register, login, logout } = require('./controllers/pageCtrl')
 
-app.post('/seed', seed)
+// app.post('/seed', seed)
 app.get('/hikes', getHikes)
 app.post('/hikes', createHikes)
 app.delete('/hikes/:id', deleteHikes)
 app.post('/register', register)
 app.post('/login', login)
+app.get('/logout', logout);
 
 const { PORT } = process.env
 

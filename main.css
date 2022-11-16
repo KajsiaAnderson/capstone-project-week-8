@@ -9,6 +9,7 @@
     background-position: center;
     background-size: cover;
 }
+
 .second-page {
     margin: 0%;
 }
@@ -28,6 +29,7 @@ ol {
     margin-right: 2%;
     padding-left: 0%;
 }
+
 .crumb {
     margin-right: 2em;
     display: inline;
@@ -57,7 +59,8 @@ ol {
     margin-top: 20%;
     transition: 1s;
 }
-.main-div:hover{
+
+.main-div:hover {
     transition: 0.3s;
     transform: scale(1.05, 1.05);
     filter: drop-shadow(8px 8px 10px black);
@@ -67,6 +70,7 @@ ol {
     height: 10vh;
     transition: 0.8s;
 }
+
 .logo:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -118,6 +122,7 @@ main {
     border-width: 10px;
     transition: 0.8s;
 }
+
 .hike-form:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -134,6 +139,7 @@ main {
     margin-top: 15px;
     transition: 0.8s;
 }
+
 .add-btn:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -143,18 +149,22 @@ main {
     margin-right: 15px;
     margin-left: 0px;
 }
+
 #rating-two {
     margin-right: 15px;
     margin-left: 0px;
 }
+
 #rating-three {
     margin-right: 15px;
     margin-left: 0px;
 }
+
 #rating-four {
     margin-right: 15px;
     margin-left: 0px;
 }
+
 #rating-five {
     margin-right: 15px;
     margin-left: 0px;
@@ -214,6 +224,7 @@ input[type='text'] {
     border-radius: 12px;
     transition: 0.8s;
 }
+
 .hike-card:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -231,6 +242,7 @@ input[type='text'] {
     margin-bottom: 20px;
     transition: 0.8s;
 }
+
 .delete-btn:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -298,6 +310,7 @@ input[type='text'] {
     border-width: 10px;
     transition: 0.8s;
 }
+
 .calculator:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -314,6 +327,7 @@ input[type='text'] {
     margin-top: 15px;
     transition: 0.8s;
 }
+
 #calculate-btn:hover {
     transition: 0.3s;
     transform: scale(1.1, 1.1);
@@ -330,8 +344,8 @@ input[type='text'] {
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .page-title {
-       margin-top: 20%;
-       font-size: 50px;
+        margin-top: 20%;
+        font-size: 50px;
     }
 
     .main-div {

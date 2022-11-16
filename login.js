@@ -5,6 +5,7 @@ const registerDiv = document.getElementById("registerDiv");
 const loginForm = document.getElementById("login");
 const loginToggle = document.getElementById("login_toggle");
 const loginDiv = document.getElementById("loginDiv");
+const loginBtn = document.getElementById("login-btn");
 
 
 const regToggle = () => {
@@ -95,17 +96,6 @@ const loginToggleHandler = e => {
 
 
 
-const login = (body) => axios.post('/login', body)
-  .then(res => {
-      alert("Login successful!");
-     window.localStorage.setItem('token', res.data.email)
-  })
-  .catch(err => {
-      console.log(err);
-      alert(`${err.response.data.message}`);
-      // alert('Invalid credentials. Please try again.');
-  })
-
 
 const loginSubmitHandler = e => {
   e.preventDefault();
@@ -113,13 +103,26 @@ const loginSubmitHandler = e => {
   let email = document.querySelector('#loginEmail');
   let password = document.querySelector('#loginPassword');
 
-  let bodyObj = {
+  let body = {
     email: email.value,
     password: password.value
   };
 
-  login(bodyObj);
-};
+  axios.post('/login', body)
+  .then(res => {
+    email.value = ''
+    password.value = ''
+
+    if (res.data.length > 0){
+      window.localStorage.setItem('email', res.data[0].email)
+      location.assign("/hikesHtml")
+      loginBtn.style.display = "none"
+    }else{
+      alert("invalid login")
+    }
+  })
+  
+}
 
 
 registerForm.addEventListener('submit', registerSubmitHandler);

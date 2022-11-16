@@ -4,7 +4,7 @@ const nameInput = document.querySelector('#name-input')
 const distanceInput = document.querySelector('#distance-input')
 const elevationInput = document.querySelector('#elevation-input')
 const routeInput = document.querySelector('#route-input-dropdown')
-
+const userId = window.localStorage.getItem('email')
 
 function handleSubmit(e) {
     e.preventDefault()
@@ -35,6 +35,7 @@ function handleSubmit(e) {
         elevation: elevationInput.value,
         route: routeInput.value,
         rating: +userRating,
+        token: userId
     }
 
     axios.post('/hikes', body)
@@ -59,8 +60,10 @@ function getHikes() {
 
     axios.get('/hikes')
         .then(res => {
+            const token = window.localStorage.getItem('email')
             res.data.forEach(elem => {
-                let hikeCard = `<div class="hike-card">
+                if (elem.userid === token) {
+                    let hikeCard = `<div class="hike-card">
                     <h2>${elem.name}</h2>
                     <p class="card-p">${elem.distance} miles</p>
                     <p class="card-p">${elem.elevation} ft</p>
@@ -70,7 +73,8 @@ function getHikes() {
                     </div>
                 `
 
-                hikeList.innerHTML += hikeCard
+                    hikeList.innerHTML += hikeCard
+                }
             })
         })
 }

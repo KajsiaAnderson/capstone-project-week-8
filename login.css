@@ -1,3 +1,7 @@
+* {
+    font-family: 'Hind', sans-serif;
+}
+
 body {
     padding: 0px;
     margin: 0px;
@@ -12,6 +16,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 2%;
 }
 
 .form_container {
@@ -35,12 +40,6 @@ body {
     box-shadow: 0 5px 25px 5px rgb(0 0 0);
 }
 
-.login_logo {
-    margin: 0px auto 10px;
-    display: block;
-    max-width: 175px;
-}
-
 .register {
     background-color: white;
     width: 350px;
@@ -50,12 +49,6 @@ body {
     box-shadow: 0 5px 15px 5px rgb(0 0 0);
 }
 
-.register_logo {
-    margin: 0px auto 10px;
-    display: block;
-    max-width: 175px;
-}
-
 .register_form_input {
     width: 100%;
     margin-bottom: 5px;
@@ -63,7 +56,6 @@ body {
     padding-left: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-family: Helvetica Light;
     font-size: 14px;
 }
 .submit_button {
@@ -74,7 +66,6 @@ body {
     border-radius: 5px;
     background: #4A5859;
     color: white;
-    font-family: Helvetica Light;
     font-size: 15px;
 }
 
@@ -86,20 +77,17 @@ body {
     border-radius: 5px;
     background: #4A5859;
     color: #ebe9e7;
-    font-family: Helvetica Light;
     font-size: 16px;
     font-weight: bold;
 }
 
 .form_toggle{
     color: #4A5859;
-    font-family: Helvetica Light;
     font-size: 15px;
 }
 
 .form_toggle:hover {
     color: rgb(167, 76, 43);
-    font-family: Helvetica Light;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -112,7 +100,6 @@ body {
     border-radius: 5px;
     background: #4A5859;
     color: #ebe9e7;
-    font-family: Helvetica Light;
     font-size: 15px;
 }
 
@@ -124,7 +111,6 @@ body {
     border-radius: 5px;
     background: #4A5859;
     color: #ebe9e7;
-    font-family: Helvetica Light;
     font-size: 16px;
     font-weight: bold;
 }
@@ -132,38 +118,14 @@ body {
 
 
 
-.nav-others {
+.logo {
+    height: 12vh;
+    transition: 0.8s;
     display: flex;
-    justify-content: end;
-    width: 250%;
+    margin-inline: auto;
+    max-width: 350px;
 }
-
-ol {
-    margin-top: 2%;
-    margin-right: 2%;
-    padding-left: 0%;
-}
-.crumb {
-    margin-right: 2em;
-    display: inline;
-}
-
-.nav-a:link {
-    color: black;
-    text-decoration: none;
-}
-
-.nav-a:visited {
-    /* color: #8CADA7; */
-    color: #4A5859;
-}
-
-.nav-a:hover {
-    color: rgb(167, 76, 43);
-}
-
-.hike-header {
-    display: flex;
-    width: 100%;
-    height: 10vh;
+.logo:hover {
+    transition: 0.3s;
+    transform: scale(1.1, 1.1);
 }

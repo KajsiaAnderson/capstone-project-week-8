@@ -6,24 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/loginCss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hike-header"><a href="/"><img class="logo" src="/logo" alt="take a hike logo"></a>
 
-        <nav class="nav-others">
-            <ol>
-                <li class="crumb"><a class="nav-a" href="/hikesHtml">Hikes</a></li>
-                <li class="crumb"><a class="nav-a" href="/waterHtml">Water Calculator</a></li>
-                <li class="crumb"><a class="nav-a" href="/login">Login</a></li>
-            </ol>
-        </nav>
-    </header>
     
     <div class="container">
-        <div class="form_container" id="loginDiv">
+        <div class="form_container active" id="loginDiv">
 
             <form class="login" id="login">
-                <!-- <img class="login_logo" src="/logo" alt="Take a Hike Logo"> -->
+                <a href='/'><img class="logo" src="/logo" alt="Take a Hike Logo"></a>
+                <h3>Sign-in</h3>
 
                 <label>Email:</label>
                 <input class="register_form_input" id="loginEmail" type="text" placeholder="Email Address">
@@ -40,10 +35,11 @@
             </form>
         </div>
 
-        <div class="form_container active" id="registerDiv">
+        <div class="form_container" id="registerDiv">
             
             <form class="register" id="register">
-                <!-- <img class="register_logo" src="/logo" alt="Take a Hike Logo"> -->
+                <a href='/'><img class="logo" src="/logo" alt="Take a Hike Logo"></a>
+                <h3>Create an Account</h3>
 
                 <label>First Name:</label>
                 <input class="register_form_input" id="first_name" type="text" placeholder="First Name" required/>

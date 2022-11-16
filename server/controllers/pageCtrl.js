@@ -34,32 +34,32 @@ module.exports = {
     logo: (req, res) => {
         res.sendFile(path.join(__dirname, "../../logo-new.png"))
     },
-    seed: (req, res) => {
-        sequelize.query(`
-        drop table if exists hikes;
+    // seed: (req, res) => {
+    //     sequelize.query(`
+    //     drop table if exists hikes;
 
-        CREATE TABLE hikes(
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(100) NOT NULL,
-            distance FLOAT NOT NULL,
-            elevation INT NOT NULL,
-            route VARCHAR(100) NOT NULL,
-            rating INT NOT NULL
-          );
+    //     CREATE TABLE hikes(
+    //         id SERIAL PRIMARY KEY,
+    //         name VARCHAR(100) NOT NULL,
+    //         distance FLOAT NOT NULL,
+    //         elevation INT NOT NULL,
+    //         route VARCHAR(100) NOT NULL,
+    //         rating INT NOT NULL
+    //       );
           
-          INSERT INTO hikes (name, distance, elevation, route, rating)
-          VALUES ('Lone Peak', 16.8, 5554, 'Out & Back', 5),
-          ('Mount Timpanogos', 14.3, 4448, 'Out & Back', 5),
-          ('Cascade Mountain', 16.7, 5396, 'Out & Back', 4),
-          ('Provo Peak', 11.6, 6522, 'Out & Back', 1),
-          ('Mount Nebo', 8.6, 3569, 'Out & Back', 4),
-          ('Spanish Fork Peak', 10.6, 4685, 'Out & Back', 3),
-          ('Loafer Mountain', 11.2, 3536, 'Out & Back', 2);
-          `).then(() => {
-            console.log('DB seeded!')
-            res.sendStatus(200)
-        }).catch(err => console.log('error seeding DB', err))
-    },
+    //       INSERT INTO hikes (name, distance, elevation, route, rating)
+    //       VALUES ('Lone Peak', 16.8, 5554, 'Out & Back', 5),
+    //       ('Mount Timpanogos', 14.3, 4448, 'Out & Back', 5),
+    //       ('Cascade Mountain', 16.7, 5396, 'Out & Back', 4),
+    //       ('Provo Peak', 11.6, 6522, 'Out & Back', 1),
+    //       ('Mount Nebo', 8.6, 3569, 'Out & Back', 4),
+    //       ('Spanish Fork Peak', 10.6, 4685, 'Out & Back', 3),
+    //       ('Loafer Mountain', 11.2, 3536, 'Out & Back', 2);
+    //       `).then(() => {
+    //         console.log('DB seeded!')
+    //         res.sendStatus(200)
+    //     }).catch(err => console.log('error seeding DB', err))
+    // },
 
     getHikes: (req, res) => {
         sequelize.query(`
@@ -72,14 +72,16 @@ module.exports = {
     },
 
     createHikes: (req, res) => {
-        let { name, distance, elevation, route, rating } = req.body
+        let { name, distance, elevation, route, rating, token } = req.body
+        // console.log(token)
         name = name.replaceAll("'", "''")
-
+       
         sequelize.query(`
-        INSERT INTO hikes (name, distance, elevation, route, rating)
-          VALUES ('${name}', ${distance}, ${elevation}, '${route}', ${rating});
+        INSERT INTO hikes (name, distance, elevation, route, rating, userid)
+          VALUES ('${name}', ${distance}, ${elevation}, '${route}', ${rating}, '${token}');
           
           SELECT * FROM hikes
+          WHERE userid = '${token}'
           ORDER BY rating DESC;
           `)
             .then((dbRes) => {
@@ -118,7 +120,7 @@ module.exports = {
     login:(req, res) => {
         const { email, password } = req.body
         sequelize.query(`
-        SELECT email, password
+        SELECT *
         FROM login
         WHERE email = ('${email}') AND password = ('${password}')
     `)
@@ -126,6 +128,10 @@ module.exports = {
                 res.status(200).send(dbRes[0])
             })
 
-            // select hikes from database that is with the user id
+    },
+
+    logout: (req, res) => {
+        res.clearCookie('accessToken');
+        return res.status(200).send( 'Logout successful.');
     }
 }
