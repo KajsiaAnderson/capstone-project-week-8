@@ -115,7 +115,7 @@ const loginSubmitHandler = e => {
 
     if (res.data.length > 0){
       window.localStorage.setItem('email', res.data[0].email)
-      location.assign("/hikesHtml")
+      location.assign("/myHikes")
       loginBtn.style.display = "none"
     }else{
       alert("invalid login")
