@@ -46,7 +46,7 @@ module.exports = {
     //         route VARCHAR(100) NOT NULL,
     //         rating INT NOT NULL
     //       );
-          
+
     //       INSERT INTO hikes (name, distance, elevation, route, rating)
     //       VALUES ('Lone Peak', 16.8, 5554, 'Out & Back', 5),
     //       ('Mount Timpanogos', 14.3, 4448, 'Out & Back', 5),
@@ -75,15 +75,18 @@ module.exports = {
         let { name, distance, elevation, route, rating, token } = req.body
         // console.log(token)
         name = name.replaceAll("'", "''")
-       
+
         sequelize.query(`
         INSERT INTO hikes (name, distance, elevation, route, rating, userid)
-          VALUES ('${name}', ${distance}, ${elevation}, '${route}', ${rating}, '${token}');
+          VALUES (:name, :distance, :elevation, :route, :rating, :token);
           
           SELECT * FROM hikes
-          WHERE userid = '${token}'
+          WHERE userid = :token
           ORDER BY rating DESC;
-          `)
+          `,
+            {
+                replacements: { token: token, name, distance, elevation, route, rating }
+            })
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
             })
@@ -93,8 +96,11 @@ module.exports = {
         const { id } = req.params
 
         sequelize.query(`
-        DELETE FROM hikes WHERE id = ${id}
-        `)
+        DELETE FROM hikes WHERE id = :id
+        `,
+            {
+                replacements: { id: id }
+            })
             .then((dbRes) => {
                 console.log(dbRes)
                 res.status(200).send(dbRes[0])
@@ -110,20 +116,26 @@ module.exports = {
 
         sequelize.query(`
         INSERT INTO login (first_name, last_name, email, password)
-          VALUES ('${first_name}', '${last_name}', '${email}', '${password}');
-          `)
+          VALUES (:first_name, :last_name, :email, :password);
+          `,
+          {
+            replacements: {first_name: first_name, last_name: last_name, email: email, password: password}
+          })
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
             })
     },
 
-    login:(req, res) => {
+    login: (req, res) => {
         const { email, password } = req.body
         sequelize.query(`
         SELECT *
         FROM login
-        WHERE email = ('${email}') AND password = ('${password}')
-    `)
+        WHERE email = :email AND password = :password
+    `,
+            {
+                replacements: { email: email, password }
+            })
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
             })
@@ -132,6 +144,6 @@ module.exports = {
 
     logout: (req, res) => {
         res.clearCookie('accessToken');
-        return res.status(200).send( 'Logout successful.');
+        return res.status(200).send('Logout successful.');
     }
 }
