@@ -16,7 +16,7 @@ const regToggle = () => {
 function register (body){
 axios.post('/register', body)
   .then(res => {
-    alert("Account registered successfully!");
+    Swal.fire("Account registered successfully!");
     registerForm.reset();
     regToggle();
   })
@@ -118,7 +118,7 @@ const loginSubmitHandler = e => {
       location.assign("/myHikes")
       loginBtn.style.display = "none"
     }else{
-      alert("invalid login")
+      Swal.fire("invalid login")
     }
   })
   
