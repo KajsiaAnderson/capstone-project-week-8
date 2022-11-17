@@ -11,5 +11,5 @@ Take a Hike is a fullstack web application that lets users add and rate hikes th
 * NodeJs
 * Javascript
 * HTML/CSS
-* PostgresSQL
+* PostgreSQL
 * Express
