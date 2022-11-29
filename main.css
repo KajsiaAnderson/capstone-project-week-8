@@ -3,7 +3,8 @@
 }
 
 .main-page {
-    background-image: url('https://source.unsplash.com/wxkHg1Tegh4');
+    /* background-image: url('https://source.unsplash.com/wxkHg1Tegh4'); */
+    background-image: url('https://images.unsplash.com/photo-1470695112598-4f976b048d28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -97,6 +98,7 @@ ol {
     font-weight: 100;
     font-family: 'Montserrat', sans-serif;
 }
+
 .page-title-calc {
     display: flex;
     justify-content: center;
@@ -106,6 +108,7 @@ ol {
     font-weight: 100;
     font-family: 'Montserrat', sans-serif;
 }
+
 .page-title-water {
     display: flex;
     justify-content: center;
@@ -122,7 +125,7 @@ main {
 }
 
 .hike-form {
-    width: 350px;
+    width: 19vw;
     height: 350px;
     background-color: #4A5859;
     position: relative;
@@ -213,6 +216,7 @@ input[type='text'] {
     justify-content: space-around;
     align-items: center;
 }
+
 input[type='radio'] {
     accent-color: rgb(204, 106, 70);
 }
@@ -233,7 +237,7 @@ input[type='radio'] {
 
 .hike-card {
     background-color: white;
-    width: 300px;
+    width: 19vw;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -356,21 +360,74 @@ input[type='radio'] {
 }
 
 #total-water {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-weight: bold;
     font-size: 30px;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 820px) {
     .page-title {
         margin-top: 20%;
         font-size: 50px;
+        width: auto;
     }
 
     .main-div {
         margin-top: 55%;
+        width: 100%;
+    }
+
+    .hike-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .nav-others {
+        width: auto;
+       display: flex;
+       justify-content: space-evenly;
+    }
+    
+    .crumb{
+       margin-right: 1.5em;
+       margin-left: 1.5em;
+    }
+
+    .hike-form {
+        width: 60vw;
+    }
+
+    img.logo {
+        width: auto;
+    }
+
+    .page-title-water {
+        font-size: 40px;
+        margin-top: 20%;
+    }
+
+    .page-title-calc {
+        font-size: 40px;
+    }
+    
+    .hike-card{
+        width:100vw;
+    }
+    
+    .water {
+        width: auto;
+    }
+
+    .calculator{
+        margin-right:0;
+        margin-left:0;
+    }
+
+    #total-water {
+        text-align: center;
     }
 }
