@@ -2,6 +2,8 @@ const path = require("path")
 require('dotenv').config()
 const CONNECTION_STRING = process.env.CONNECTION_STRING
 const Sequelize = require('sequelize')
+const bcrypt = require('bcrypt')
+const { QueryTypes } = require("sequelize")
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
@@ -111,35 +113,53 @@ module.exports = {
             })
     },
 
-    register: (req, res) => {
+    register: async (req, res) => {
         const { first_name, last_name, email, password } = req.body
+        const saltRounds = 10
+        const hash = await bcrypt.hash(password, saltRounds)
 
         sequelize.query(`
         INSERT INTO login (first_name, last_name, email, password)
-          VALUES (:first_name, :last_name, :email, :password);
+          VALUES (:first_name, :last_name, :email, :hash);
           `,
-          {
-            replacements: {first_name: first_name, last_name: last_name, email: email, password: password}
-          })
+            {
+                replacements: { first_name: first_name, last_name: last_name, email: email, hash: hash }
+            })
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
             })
     },
 
-    login: (req, res) => {
+    login: async (req, res) => {
         const { email, password } = req.body
-        sequelize.query(`
-        SELECT *
+
+        let hash = await sequelize.query(`
+        SELECT password
         FROM login
-        WHERE email = :email AND password = :password
-    `,
+        WHERE email = ?`,
             {
-                replacements: { email: email, password }
-            })
+                replacements: [email],
+                type: QueryTypes.INSERT
+            }
+        )
+        hash = hash[0][0].password
+        const authenticated = await bcrypt.compare(password, hash)
+        if (!authenticated) {
+            res.status(401).json({ message: "Email and Password do not match. Please try again." })
+            return
+        }
+        sequelize.query(
+            `SELECT email FROM login
+            WHERE email = ?
+            AND password = '${hash}'`,
+            {
+                replacements: [email],
+                type: QueryTypes.INSERT
+            }
+        )
             .then((dbRes) => {
                 res.status(200).send(dbRes[0])
             })
-
     },
 
     logout: (req, res) => {
